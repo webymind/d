@@ -70,7 +70,7 @@ function playHeroIntro() {
   if (prefersReducedMotion) {
     gsap.set([heroZoomLayers, '.hero-anim-wordmark', '.hero-anim-card', '.hero-anim-card-item',
       '.hero-anim-navbar', '.hero-anim-logo', '.hero-anim-navitem', '.scroll-cue'], { clearProps: 'all' });
-    gsap.set(['.hero-anim-wordmark', '.hero-anim-card', '.hero-anim-navbar', '.hero-anim-logo', '.scroll-cue'], { opacity: 1 });
+    gsap.set(['.hero-anim-wordmark', '.hero-anim-card', '.hero-anim-navbar', '.hero-anim-logo'], { opacity: 1 });
     return;
   }
 
@@ -89,7 +89,6 @@ function playHeroIntro() {
     .fromTo('.hero-anim-logo', { y: -80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: 'back.out(1.4)' }, 0.44)
     .fromTo('.hero-anim-navitem', { y: -12, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, stagger: 0.035 }, 0.56)
 
-    .to('.scroll-cue', { opacity: 1, duration: 0.6 }, 1.15)
     .add(startHeroAmbient, 1.2);
 }
 
@@ -107,8 +106,7 @@ if (!prefersReducedMotion) {
   })
     .to('.hero-layer--bg, .hero-layer--fg', { yPercent: 12, ease: 'none' }, 0)
     .to('.hero-layer--mark', { yPercent: -18, ease: 'none' }, 0)
-    .to('.hero-content', { y: 80, opacity: 0.15, ease: 'none' }, 0)
-    .to('.scroll-cue', { opacity: 0, ease: 'none' }, 0);
+    .to('.hero-content', { y: 80, opacity: 0.15, ease: 'none' }, 0);
 }
 
 /* ---------- Scroll reveals ---------- */
