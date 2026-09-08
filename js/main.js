@@ -69,7 +69,7 @@ const heroZoomLayers = gsap.utils.toArray('.hero-anim-zoom');
 function playHeroIntro() {
   if (prefersReducedMotion) {
     gsap.set([heroZoomLayers, '.hero-anim-wordmark', '.hero-anim-card', '.hero-anim-card-item',
-      '.hero-anim-navbar', '.hero-anim-logo', '.hero-anim-navitem', '.scroll-cue'], { clearProps: 'all' });
+      '.hero-anim-navbar', '.hero-anim-logo', '.hero-anim-navitem'], { clearProps: 'all' });
     gsap.set(['.hero-anim-wordmark', '.hero-anim-card', '.hero-anim-navbar', '.hero-anim-logo'], { opacity: 1 });
     return;
   }
