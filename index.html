@@ -58,12 +58,25 @@
   <section class="hero" id="home">
     <div class="hero-bg hero-anim-bg">
       <div class="hero-bg-grad"></div>
+      <svg class="hero-fallback-scene" viewBox="0 0 1600 500" preserveAspectRatio="none" aria-hidden="true">
+        <polygon points="0,500 0,320 60,320 60,260 120,260 120,340 210,340 210,220 260,220 260,340 340,340 340,180 420,180 420,340 520,340 520,300 600,300 600,340 700,340 700,150 760,150 760,340 860,340 860,260 940,260 940,340 1040,340 1040,200 1120,200 1120,340 1220,340 1220,280 1300,280 1300,340 1400,340 1400,160 1460,160 1460,340 1600,340 1600,500" fill="#0b0d13"/>
+        <g stroke="#3a4256" stroke-width="4" fill="none" stroke-linecap="round" opacity=".6">
+          <line x1="1180" y1="500" x2="1180" y2="120"/>
+          <line x1="1120" y1="140" x2="1300" y2="140"/>
+          <line x1="1180" y1="120" x2="1140" y2="150"/>
+          <line x1="1180" y1="240" x2="1140" y2="150"/>
+          <line x1="1290" y1="140" x2="1290" y2="220"/>
+        </g>
+      </svg>
       <div class="hero-bg-photo" style="background-image:url('assets/hero/bg.png')"></div>
       <div class="hero-bg-glow"></div>
     </div>
 
     <div class="hero-content container">
-      <img class="hero-title hero-anim-title" src="assets/hero/terrax-mark.png" alt="TERRAX">
+      <div class="hero-title-wrap hero-anim-title">
+        <img class="hero-title" src="assets/hero/terrax-mark.png" alt="TERRAX" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+        <h1 class="hero-title-fallback">TERRAX</h1>
+      </div>
 
       <div class="hero-cta-card hero-anim-card">
         <p class="hero-cta-heading hero-anim-card-item">Hire us for your<br>next project.</p>
