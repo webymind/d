@@ -7,8 +7,12 @@
 <meta name="description" content="TERRAX Holdings (Mauritius) Ltd — integrated construction, civil engineering and infrastructure services.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Montserrat+Alternates:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Montserrat+Alternates:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/hero/hero.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="assets/hero/excavator.png">
+<link rel="preload" as="image" href="assets/hero/terrax-wordmark.png">
 <link rel="stylesheet" href="css/styles.css">
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
@@ -16,16 +20,15 @@
 
 <header class="site-nav" id="siteNav">
   <div class="nav-inner">
-    <a href="#home" class="logo" aria-label="TERRAX home">
-      <svg class="logo-mark hero-anim-logo" width="40" height="34" viewBox="0 0 40 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M11 2 L20 17 L11 32" stroke="#ffffff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M20 2 L34 32" stroke="#ff751f" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M20 2 L11 17" stroke="#ff751f" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <a href="#home" class="logo hero-anim-logo" aria-label="TERRAX home">
+      <svg class="logo-mark" width="56" height="34" viewBox="0 0 56 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M3 32 L18 4 L30 26" stroke="#ff751f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M24 32 L38 4 L53 32" stroke="#e7e2dc" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M18 4 L30 26" stroke="#ff751f" stroke-width="4" stroke-linecap="round"/>
       </svg>
     </a>
 
-    <nav class="nav-pill hero-anim-navbar" id="navPill">
-      <a href="#home" class="nav-link hero-anim-navitem">Home</a>
+    <nav class="nav-pill hero-anim-navbar" id="navPill" aria-label="Primary">
       <a href="#about" class="nav-link hero-anim-navitem">About</a>
       <a href="#services" class="nav-link hero-anim-navitem">Services</a>
       <a href="#projects" class="nav-link hero-anim-navitem">Projects</a>
@@ -35,13 +38,12 @@
       <a href="#contact" class="nav-link hero-anim-navitem">Request Consultation</a>
     </nav>
 
-    <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+    <button class="nav-toggle hero-anim-navbar" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMobile">
       <span></span><span></span><span></span>
     </button>
   </div>
 
   <div class="nav-mobile" id="navMobile">
-    <a href="#home" class="nav-link">Home</a>
     <a href="#about" class="nav-link">About</a>
     <a href="#services" class="nav-link">Services</a>
     <a href="#projects" class="nav-link">Projects</a>
@@ -56,35 +58,46 @@
 
   <!-- HERO -->
   <section class="hero" id="home">
-    <div class="hero-bg hero-anim-bg">
-      <div class="hero-bg-grad"></div>
-      <svg class="hero-fallback-scene" viewBox="0 0 1600 500" preserveAspectRatio="none" aria-hidden="true">
-        <polygon points="0,500 0,320 60,320 60,260 120,260 120,340 210,340 210,220 260,220 260,340 340,340 340,180 420,180 420,340 520,340 520,300 600,300 600,340 700,340 700,150 760,150 760,340 860,340 860,260 940,260 940,340 1040,340 1040,200 1120,200 1120,340 1220,340 1220,280 1300,280 1300,340 1400,340 1400,160 1460,160 1460,340 1600,340 1600,500" fill="#0b0d13"/>
-        <g stroke="#3a4256" stroke-width="4" fill="none" stroke-linecap="round" opacity=".6">
-          <line x1="1180" y1="500" x2="1180" y2="120"/>
-          <line x1="1120" y1="140" x2="1300" y2="140"/>
-          <line x1="1180" y1="120" x2="1140" y2="150"/>
-          <line x1="1180" y1="240" x2="1140" y2="150"/>
-          <line x1="1290" y1="140" x2="1290" y2="220"/>
-        </g>
-      </svg>
-      <div class="hero-bg-photo" style="background-image:url('assets/hero/bg.png')"></div>
-      <div class="hero-bg-glow"></div>
-    </div>
-
-    <div class="hero-content container">
-      <div class="hero-title-wrap hero-anim-title">
-        <img class="hero-title" src="assets/hero/terrax-mark.png" alt="TERRAX" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-        <h1 class="hero-title-fallback">TERRAX</h1>
+    <!--
+      Layer stack (back → front):
+        1. .hero-layer--bg   full photo
+        2. .hero-wordmark    TERRAX mark (sits between photo and machine)
+        3. .hero-layer--fg   excavator cut-out (same pixels as the photo, alpha elsewhere)
+        4. .hero-content     CTA card
+      Both photo layers share the same object-fit/position rules and the same
+      GSAP scale tween, so they stay pixel-registered while the wordmark reads
+      as being behind the excavator.
+    -->
+    <div class="hero-stage" aria-hidden="true">
+      <div class="hero-layer hero-layer--bg hero-anim-zoom">
+        <img class="hero-img" id="heroPhoto" src="assets/hero/hero.jpg" alt="" fetchpriority="high" decoding="async" draggable="false">
       </div>
 
+      <div class="hero-layer hero-layer--mark">
+        <div class="hero-wordmark hero-anim-wordmark">
+          <img class="hero-wordmark-img" id="heroWordmark" src="assets/hero/terrax-wordmark.png" alt="TERRAX" decoding="async" draggable="false" onerror="this.hidden=true;this.nextElementSibling.hidden=false;">
+          <span class="hero-wordmark-fallback" hidden>TERRAX</span>
+        </div>
+      </div>
+
+      <div class="hero-layer hero-layer--fg hero-anim-zoom">
+        <img class="hero-img" id="heroCutout" src="assets/hero/excavator.png" alt="" decoding="async" draggable="false" onerror="this.parentElement.remove();">
+      </div>
+
+      <div class="hero-shade hero-shade--top"></div>
+      <div class="hero-shade hero-shade--bottom"></div>
+    </div>
+
+    <h1 class="sr-only">TERRAX Holdings — Engineering the built environment</h1>
+
+    <div class="hero-content container">
       <div class="hero-cta-card hero-anim-card">
         <p class="hero-cta-heading hero-anim-card-item">Hire us for your<br>next project.</p>
         <a href="#contact" class="btn btn-primary hero-anim-card-item">Request Consultation</a>
       </div>
     </div>
 
-    <a href="#about" class="scroll-cue" aria-label="Scroll down"><span></span></a>
+    <a href="#services" class="scroll-cue" aria-label="Scroll down"><span></span></a>
   </section>
 
   <!-- OUR EXPERTISE -->

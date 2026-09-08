@@ -10,8 +10,12 @@ section reveals.
   how-we-work timeline, about/why-terrax, projects, contact, footer)
 - `css/styles.css` — all styling (dark theme, orange accent, responsive)
 - `js/main.js` — GSAP timelines: hero intro animation (recreated from the
-  Figma keyframe/motion data) + ScrollTrigger reveals for every section
+  reference motion video) + ambient drift, scroll parallax and ScrollTrigger
+  reveals for every section
 - `js/vendor/` — GSAP + ScrollTrigger, vendored locally (no CDN dependency)
+- `assets/hero/` — hero photo, TERRAX wordmark and the excavator cut-out
+  (see `assets/hero/README.md` for the exact file names and export sizes)
+- `tools/make-hero-cutout.py` — generates the excavator cut-out from the photo
 
 ## Running locally
 
@@ -24,6 +28,28 @@ python3 -m http.server 8080
 ```
 
 Then open `http://localhost:8080`.
+
+## Hero
+
+The hero is a three-layer stack so the TERRAX wordmark sits *behind* the
+excavator:
+
+1. `assets/hero/hero.jpg` — the full photo
+2. `assets/hero/terrax-wordmark.png` — the wordmark
+3. `assets/hero/excavator.png` — the excavator cut-out (same pixels as the
+   photo, transparent everywhere else)
+
+Layers 1 and 3 share one CSS sizing rule and one GSAP scale tween, so they stay
+pixel-registered through the zoom-out, the ambient drift and the scroll
+parallax. The entrance timeline is exposed as `window.terraxHeroIntro` for
+tuning in devtools (`terraxHeroIntro.pause(0.3)` etc.).
+
+Generate the cut-out once the photo is in place:
+
+```
+pip install rembg onnxruntime pillow
+python3 tools/make-hero-cutout.py assets/hero/hero.jpg assets/hero/excavator.png
+```
 
 ## Notes
 

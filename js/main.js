@@ -2,25 +2,50 @@ gsap.registerPlugin(ScrollTrigger);
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
-/* ---------- Preloader ---------- */
-window.addEventListener('load', () => {
-  gsap.to('#preloader', {
-    opacity: 0,
-    duration: 0.5,
-    delay: 0.2,
-    onComplete: () => document.getElementById('preloader').remove()
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- Hero boot: wait for the hero imagery (and fonts) before the intro ----------
+   The zoom-in only reads well if the photo is already decoded, so we gate the
+   preloader + intro on decode() with a hard timeout so a slow network never
+   leaves the page stuck behind the loader. */
+function waitForHeroAssets(timeoutMs = 3000) {
+  const imgs = Array.from(document.querySelectorAll('.hero-stage img'));
+  const decodes = imgs.map(img => {
+    if (img.complete && img.naturalWidth > 0) return Promise.resolve();
+    if (typeof img.decode === 'function') return img.decode().catch(() => {});
+    return new Promise(res => { img.onload = img.onerror = res; });
   });
+  const fonts = (document.fonts && document.fonts.ready) ? document.fonts.ready.catch(() => {}) : Promise.resolve();
+  const ready = Promise.allSettled([...decodes, fonts]);
+  const timeout = new Promise(res => setTimeout(res, timeoutMs));
+  return Promise.race([ready, timeout]);
+}
+
+let heroBooted = false;
+function bootHero() {
+  if (heroBooted) return;
+  heroBooted = true;
+  const pre = document.getElementById('preloader');
+  if (pre) {
+    gsap.to(pre, { opacity: 0, duration: 0.45, ease: 'power1.out', onComplete: () => pre.remove() });
+  }
   playHeroIntro();
-});
+}
+waitForHeroAssets().then(bootHero);
+window.addEventListener('load', () => setTimeout(bootHero, 400)); // belt and braces
 
 /* ---------- Mobile nav ---------- */
 const navToggle = document.getElementById('navToggle');
 const navMobile = document.getElementById('navMobile');
 navToggle.addEventListener('click', () => {
-  navMobile.classList.toggle('open');
+  const open = navMobile.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', String(open));
 });
 navMobile.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => navMobile.classList.remove('open'));
+  a.addEventListener('click', () => {
+    navMobile.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
 });
 
 /* ---------- Sticky nav background on scroll ---------- */
@@ -32,26 +57,58 @@ ScrollTrigger.create({
   }
 });
 
-/* ---------- Hero entrance timeline ---------- */
-/* Timings mirror the Figma keyframe data captured on the hero frame:
-   background scale-in, header slide-down, nav-item + copy slide-in from left,
-   logomark drop with a slight settle. Recreated as a single 2s entrance. */
-function playHeroIntro() {
-  const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
+/* ---------- Hero entrance timeline ----------
+   Recreated from the reference motion (2s @ 30fps):
+     0.00s  photo + cut-out zoom out from 1.5 → 1
+     0.00s  CTA card slides in from the left
+     0.17s  TERRAX wordmark drops in from above, BEHIND the excavator
+     0.40s  nav pill + logomark drop down, links settle in
+   The photo and cut-out layers are tweened together so they never drift. */
+const heroZoomLayers = gsap.utils.toArray('.hero-anim-zoom');
 
-  tl.fromTo('.hero-anim-bg', { scale: 1.5 }, { scale: 1, duration: 1.25, ease: 'power2.inOut' }, 0)
-    .fromTo('.hero-anim-logo', { y: -60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, ease: 'back.out(1.6)' }, 0.05)
-    .fromTo('.hero-anim-navbar', { y: -90, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, 0)
-    .fromTo('.hero-anim-navitem', { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, stagger: 0.05 }, 0.15)
-    .fromTo('.hero-anim-title', { y: 100, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, ease: 'power3.out' }, 0.1)
-    .fromTo('.hero-anim-card', { x: -200, opacity: 0 }, { x: 0, opacity: 1, duration: 0.7 }, 0.15)
-    .fromTo('.hero-anim-card-item', { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, stagger: 0.08 }, 0.3)
-    .fromTo('.scroll-cue', { opacity: 0 }, { opacity: 1, duration: 0.6 }, 1.2);
+function playHeroIntro() {
+  if (prefersReducedMotion) {
+    gsap.set([heroZoomLayers, '.hero-anim-wordmark', '.hero-anim-card', '.hero-anim-card-item',
+      '.hero-anim-navbar', '.hero-anim-logo', '.hero-anim-navitem', '.scroll-cue'], { clearProps: 'all' });
+    gsap.set(['.hero-anim-wordmark', '.hero-anim-card', '.hero-anim-navbar', '.hero-anim-logo', '.scroll-cue'], { opacity: 1 });
+    return;
+  }
+
+  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+  window.terraxHeroIntro = tl; // exposed for QA / motion tuning
+
+  tl.fromTo(heroZoomLayers, { scale: 1.5 }, { scale: 1, duration: 1.15, ease: 'power3.out' }, 0)
+
+    .fromTo('.hero-anim-card', { x: -260, opacity: 0 }, { x: 0, opacity: 1, duration: 0.85 }, 0.04)
+    .fromTo('.hero-anim-card-item', { x: -36, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, stagger: 0.08 }, 0.18)
+
+    .set('.hero-anim-wordmark', { opacity: 1 }, 0.17)
+    .fromTo('.hero-anim-wordmark', { yPercent: -160 }, { yPercent: 0, duration: 0.8, ease: 'power3.out' }, 0.17)
+
+    .fromTo('.hero-anim-navbar', { y: -96, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 }, 0.42)
+    .fromTo('.hero-anim-logo', { y: -80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: 'back.out(1.4)' }, 0.44)
+    .fromTo('.hero-anim-navitem', { y: -12, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, stagger: 0.035 }, 0.56)
+
+    .to('.scroll-cue', { opacity: 1, duration: 0.6 }, 1.15)
+    .add(startHeroAmbient, 1.2);
 }
 
-/* Fallback in case 'load' already fired before script executed */
-if (document.readyState === 'complete') {
-  playHeroIntro();
+/* Slow, continuous drift once the intro has settled — keeps the hero alive
+   without ever pushing the photo past ~6% (stays sharp on retina). */
+function startHeroAmbient() {
+  gsap.to(heroZoomLayers, { scale: 1.06, duration: 18, ease: 'sine.inOut', yoyo: true, repeat: -1 });
+}
+
+/* Scroll parallax: machine drifts down slowly, wordmark rises behind it,
+   the CTA card eases away. Scrubbed so it is fully reversible. */
+if (!prefersReducedMotion) {
+  gsap.timeline({
+    scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+  })
+    .to('.hero-layer--bg, .hero-layer--fg', { yPercent: 12, ease: 'none' }, 0)
+    .to('.hero-layer--mark', { yPercent: -18, ease: 'none' }, 0)
+    .to('.hero-content', { y: 80, opacity: 0.15, ease: 'none' }, 0)
+    .to('.scroll-cue', { opacity: 0, ease: 'none' }, 0);
 }
 
 /* ---------- Scroll reveals ---------- */
