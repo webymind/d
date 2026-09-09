@@ -1,48 +1,51 @@
-# TERRAX Holdings — Website
+# TERRAX Holdings (Mauritius) Ltd — Website
 
-Static HTML/CSS/GSAP implementation of the TERRAX Holdings (Mauritius) Ltd
-Figma design, including the hero entrance motion and scroll-triggered
-section reveals.
+Static HTML / CSS / GSAP implementation of the approved Terrax design canvas.
+No build step: open `index.html` from any static server.
 
 ## Structure
 
-- `index.html` — page markup (hero, expertise, integrated services,
-  how-we-work timeline, about/why-terrax, projects, contact, footer)
-- `css/styles.css` — all styling (dark theme, orange accent, responsive)
-- `js/main.js` — GSAP timelines: hero intro animation (recreated from the
-  reference motion video) + ambient drift, scroll parallax and ScrollTrigger
-  reveals for every section
+- `index.html` — the full home page, sections 01–10
+- `css/styles.css` — design tokens and all styling (Archivo + IBM Plex Mono, `#FF741F`)
+- `js/main.js` — hero intro timeline, sticky scroll-scrubbed services section,
+  stage selector, quality/safety tabs, reveals, mobile menu
 - `js/vendor/` — GSAP + ScrollTrigger, vendored locally (no CDN dependency)
-- `assets/hero/` — hero photo, TERRAX wordmark and the excavator cut-out
-  (see `assets/hero/README.md` for the exact file names and export sizes)
-- `tools/make-hero-cutout.py` — generates the excavator cut-out from the photo
+- `assets/hero/` — hero photo, TERRAX wordmark, excavator cut-out
+- `tools/make-hero-cutout.py` — generates the cut-out from the hero photo
 
-## Running locally
+## Sections
 
-Any static server works, e.g.:
-
-```
-npx serve .
-# or
-python3 -m http.server 8080
-```
-
-Then open `http://localhost:8080`.
+| # | Section | Notes |
+|---|---------|-------|
+| — | Hero | Three-layer stack, wordmark behind the machine, services ticker |
+| 01 | How we are | Company statement, four pillars |
+| 02 | What we do | Sticky, scroll-scrubbed video with eight service reveals |
+| 03 | How we work | Eight-stage selector |
+| 04 | Why Terrax | Seven working principles |
+| 05 | Sectors we serve | Eight sectors |
+| 06 | Quality & Safety | Quality / Health & Safety tabs |
+| 07 | Sustainability | Six commitments |
+| 08 | Projects | Portfolio status, reserved slots |
+| 09 | Start a project | CTA and direct lines |
+| 10 | Footer | Navigation, contact, legal |
 
 ## Hero
 
-The hero is a three-layer stack so the TERRAX wordmark sits *behind* the
-excavator:
+Three layers stack so the TERRAX wordmark sits *behind* the excavator:
 
 1. `assets/hero/hero.jpg` — the full photo
 2. `assets/hero/terrax-wordmark.png` — the wordmark
-3. `assets/hero/excavator.png` — the excavator cut-out (same pixels as the
+3. `assets/hero/excavator.png` — the excavator cut-out (identical pixels to the
    photo, transparent everywhere else)
 
 Layers 1 and 3 share one CSS sizing rule and one GSAP scale tween, so they stay
 pixel-registered through the zoom-out, the ambient drift and the scroll
-parallax. The entrance timeline is exposed as `window.terraxHeroIntro` for
-tuning in devtools (`terraxHeroIntro.pause(0.3)` etc.).
+parallax. Without layer 3 the wordmark simply sits on top of the photo, and
+without layer 2 a styled text fallback is used — the page degrades cleanly
+either way.
+
+The entrance timeline is exposed as `window.terraxHeroIntro`, so it can be
+paused and scrubbed in devtools (`terraxHeroIntro.pause(0.3)`).
 
 Generate the cut-out once the photo is in place:
 
@@ -51,11 +54,28 @@ pip install rembg onnxruntime pillow
 python3 tools/make-hero-cutout.py assets/hero/hero.jpg assets/hero/excavator.png
 ```
 
-## Notes
+## Services video (section 02)
 
-Photographic imagery and the exact icon set from the Figma file could not be
-downloaded in this environment (egress to Figma's asset CDN and other image
-hosts was blocked), so photos were recreated as CSS gradients/SVG line art
-and icons were hand-coded to match the same style. Swap the elements with
-`.expertise-image` classes in `index.html` for real photography when
-available.
+Drop an MP4 at `assets/what-we-do.mp4`. The page checks for it at runtime; when
+it is present the video replaces the striped placeholder and its playhead is
+scrubbed by scroll position across the eight service panels. Encode it with
+frequent keyframes so seeking stays smooth:
+
+```
+ffmpeg -i source.mp4 -an -g 6 -crf 24 -movflags +faststart assets/what-we-do.mp4
+```
+
+## Running locally
+
+```
+npx serve .
+# or
+python3 -m http.server 8080
+```
+
+## Outstanding
+
+- `assets/hero/hero.jpg` and `assets/hero/terrax-wordmark.png` are still to be
+  added; see `assets/hero/README.md`.
+- Phone number, email and office address are prototype placeholders.
+- Projects section stays empty until genuine Terrax project photography exists.

@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TERRAX Holdings — Engineering the Built Environment</title>
-<meta name="description" content="TERRAX Holdings (Mauritius) Ltd — integrated construction, civil engineering and infrastructure services.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TERRAX Holdings (Mauritius) Ltd — Building Quality. Creating Value.</title>
+<meta name="description" content="TERRAX HOLDINGS (MAURITIUS) LTD — a Mauritius-based construction and project services company. Construction, civil works, landscaping, electrical, plumbing, masonry, maintenance and project management under one appointment.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Montserrat+Alternates:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/hero/hero.jpg" fetchpriority="high">
 <link rel="preload" as="image" href="assets/hero/excavator.png">
 <link rel="preload" as="image" href="assets/hero/terrax-wordmark.png">
@@ -16,58 +16,78 @@
 </head>
 <body>
 
-<div class="preloader" id="preloader"><span class="preloader-mark"></span></div>
-
+<!-- ───────────────────────── HEADER ───────────────────────── -->
 <header class="site-nav" id="siteNav">
   <div class="nav-inner">
     <a href="#home" class="logo hero-anim-logo" aria-label="TERRAX home">
-      <svg class="logo-mark" width="56" height="34" viewBox="0 0 56 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M3 32 L18 4 L30 26" stroke="#ff751f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M24 32 L38 4 L53 32" stroke="#e7e2dc" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M18 4 L30 26" stroke="#ff751f" stroke-width="4" stroke-linecap="round"/>
+      <svg class="logo-mark" viewBox="80 130 840 445" aria-hidden="true">
+        <g fill="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="62">
+          <path class="mark-b" d="M590 520 L370 170 L351 198"/>
+          <path class="mark-a" d="M370 170 L120 535 L380 535 L398 506"/>
+          <path class="mark-b" d="M380 535 L470 395"/>
+          <path class="mark-b" d="M550 300 L655 170 L673 199"/>
+          <path class="mark-a" d="M655 170 L880 535"/>
+        </g>
       </svg>
+      <span class="logo-text">
+        <span class="logo-name">TERRAX</span>
+        <span class="logo-sub">HOLDINGS (MAURITIUS) LTD</span>
+      </span>
     </a>
 
     <nav class="nav-pill hero-anim-navbar" id="navPill" aria-label="Primary">
-      <a href="#about" class="nav-link hero-anim-navitem">About</a>
+      <a href="#about" class="nav-link hero-anim-navitem">About Us</a>
       <a href="#services" class="nav-link hero-anim-navitem">Services</a>
       <a href="#projects" class="nav-link hero-anim-navitem">Projects</a>
       <a href="#why-terrax" class="nav-link hero-anim-navitem">Why Terrax</a>
-      <a href="#quality-safety" class="nav-link hero-anim-navitem">Quality&amp;Safety</a>
+      <a href="#quality-safety" class="nav-link hero-anim-navitem">Quality &amp; Safety</a>
       <a href="#sustainability" class="nav-link hero-anim-navitem">Sustainability</a>
-      <a href="#contact" class="nav-link hero-anim-navitem">Request Consultation</a>
+      <a href="#contact" class="nav-cta hero-anim-navitem">Request a Consultation <span class="mono">&#8594;</span></a>
     </nav>
 
-    <button class="nav-toggle hero-anim-navbar" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMobile">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-
-  <div class="nav-mobile" id="navMobile">
-    <a href="#about" class="nav-link">About</a>
-    <a href="#services" class="nav-link">Services</a>
-    <a href="#projects" class="nav-link">Projects</a>
-    <a href="#why-terrax" class="nav-link">Why Terrax</a>
-    <a href="#quality-safety" class="nav-link">Quality&amp;Safety</a>
-    <a href="#sustainability" class="nav-link">Sustainability</a>
-    <a href="#contact" class="btn btn-primary">Request Consultation</a>
+    <div class="nav-mobile-actions hero-anim-navbar">
+      <a class="nav-icon" href="tel:+2305000000" aria-label="Call Terrax">&#9742;</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="menuSheet">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
 
+<!-- Mobile full-screen menu -->
+<div class="menu-sheet" id="menuSheet" hidden>
+  <div class="menu-head">
+    <span class="mono eyebrow-mono">MENU</span>
+    <button class="menu-close" id="menuClose" aria-label="Close menu">&#215;</button>
+  </div>
+  <div class="menu-body">
+    <a href="#about" class="menu-link"><span class="mono">01</span><span>About Us</span></a>
+    <a href="#services" class="menu-link"><span class="mono">02</span><span>Services</span></a>
+    <a href="#projects" class="menu-link"><span class="mono">03</span><span>Projects</span></a>
+    <a href="#why-terrax" class="menu-link"><span class="mono">04</span><span>Why Terrax</span></a>
+    <a href="#quality-safety" class="menu-link"><span class="mono">05</span><span>Quality &amp; Safety</span></a>
+    <a href="#sustainability" class="menu-link"><span class="mono">06</span><span>Sustainability</span></a>
+    <a href="#contact" class="menu-link"><span class="mono">07</span><span>Contact</span></a>
+    <div class="menu-actions">
+      <a href="#contact" class="btn btn-primary menu-cta">Request a Consultation</a>
+      <a href="https://wa.me/2305000000" class="btn btn-ghost">WhatsApp</a>
+      <a href="mailto:info@terraxholdings.mu" class="btn btn-ghost">Email</a>
+    </div>
+    <div class="menu-legal mono">BRN C26237228<br>VAT28562035<br>www.terraxholdings.mu</div>
+  </div>
+</div>
+
 <main>
 
-  <!-- HERO -->
+  <!-- ───────────────────────── HERO ─────────────────────────
+       Layer stack (back → front):
+         1. .hero-layer--bg   full photo
+         2. .hero-wordmark    TERRAX mark (between photo and machine)
+         3. .hero-layer--fg   excavator cut-out (same pixels as the photo, alpha elsewhere)
+         4. .hero-content     CTA card
+       Both photo layers share one sizing rule and one GSAP scale tween so they
+       stay pixel-registered while the wordmark reads as behind the excavator. -->
   <section class="hero" id="home">
-    <!--
-      Layer stack (back → front):
-        1. .hero-layer--bg   full photo
-        2. .hero-wordmark    TERRAX mark (sits between photo and machine)
-        3. .hero-layer--fg   excavator cut-out (same pixels as the photo, alpha elsewhere)
-        4. .hero-content     CTA card
-      Both photo layers share the same object-fit/position rules and the same
-      GSAP scale tween, so they stay pixel-registered while the wordmark reads
-      as being behind the excavator.
-    -->
     <div class="hero-stage" aria-hidden="true">
       <div class="hero-layer hero-layer--bg hero-anim-zoom">
         <img class="hero-img" id="heroPhoto" src="assets/hero/hero.jpg" alt="" fetchpriority="high" decoding="async" draggable="false">
@@ -76,7 +96,7 @@
       <div class="hero-layer hero-layer--mark">
         <div class="hero-wordmark hero-anim-wordmark">
           <img class="hero-wordmark-img" id="heroWordmark" src="assets/hero/terrax-wordmark.png" alt="TERRAX" decoding="async" draggable="false" onerror="this.hidden=true;this.nextElementSibling.hidden=false;">
-          <span class="hero-wordmark-fallback" hidden>TERRAX</span>
+          <span class="hero-wordmark-fallback" hidden><span>T</span><span>E</span><span>R</span><span>R</span><span>A</span><span>X</span></span>
         </div>
       </div>
 
@@ -88,343 +108,396 @@
       <div class="hero-shade hero-shade--bottom"></div>
     </div>
 
-    <h1 class="sr-only">TERRAX Holdings — Engineering the built environment</h1>
+    <h1 class="sr-only">TERRAX Holdings (Mauritius) Ltd — Building Quality. Creating Value.</h1>
 
     <div class="hero-content container">
       <div class="hero-cta-card hero-anim-card">
+        <div class="eyebrow hero-anim-card-item"><span class="eyebrow-line"></span><span class="mono">BUILDING QUALITY &middot; CREATING VALUE</span></div>
         <p class="hero-cta-heading hero-anim-card-item">Hire us for your<br>next project.</p>
-        <a href="#contact" class="btn btn-primary hero-anim-card-item">Request Consultation</a>
+        <a href="#contact" class="btn btn-primary hero-anim-card-item">Request Consultation <span class="mono">&#8594;</span></a>
       </div>
     </div>
+
+    <div class="hero-scrollcue" aria-hidden="true"><span class="mono">SCROLL</span><span class="hero-scrollcue-line"></span></div>
 
     <div class="hero-ticker" aria-label="Our services">
       <div class="hero-ticker-track">
         <ul class="hero-ticker-list">
-          <li>Electrical Works</li><li>Plumbing</li><li>Stone &amp; Masonry Works</li><li>Maintenance &amp; Refurbishment</li><li>Project Management</li><li>Construction</li><li>Civil Works</li><li>Landscaping &amp; External Works</li>
+          <li>Construction</li><li>Civil Works</li><li>Landscaping &amp; External Works</li><li>Electrical Works</li><li>Plumbing</li><li>Stone &amp; Masonry Works</li><li>Maintenance &amp; Refurbishment</li><li>Project Management</li>
         </ul>
         <ul class="hero-ticker-list" aria-hidden="true">
-          <li>Electrical Works</li><li>Plumbing</li><li>Stone &amp; Masonry Works</li><li>Maintenance &amp; Refurbishment</li><li>Project Management</li><li>Construction</li><li>Civil Works</li><li>Landscaping &amp; External Works</li>
+          <li>Construction</li><li>Civil Works</li><li>Landscaping &amp; External Works</li><li>Electrical Works</li><li>Plumbing</li><li>Stone &amp; Masonry Works</li><li>Maintenance &amp; Refurbishment</li><li>Project Management</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- OUR EXPERTISE -->
-  <section class="section section-dark" id="services">
-    <div class="section-glow section-glow-right"></div>
+  <!-- ───────────────────────── 01 · HOW WE ARE ───────────────────────── -->
+  <section class="section section--how-we-are" id="about">
+    <svg class="watermark-mark" viewBox="80 130 840 445" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <g fill="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="62">
+        <path d="M590 520 L370 170 L351 198" stroke="#FF741F"/>
+        <path d="M370 170 L120 535 L380 535 L398 506" stroke="#FFFFFF"/>
+        <path d="M380 535 L470 395" stroke="#FF741F"/>
+        <path d="M550 300 L655 170 L673 199" stroke="#FF741F"/>
+        <path d="M655 170 L880 535" stroke="#FFFFFF"/>
+      </g>
+    </svg>
+    <div class="section-glow"></div>
     <div class="container">
-      <div class="section-header reveal">
-        <div class="header-left">
-          <div class="eyebrow"><span class="eyebrow-dot"></span>Our Expertise</div>
-          <h2>Engineering Standard For Complex Projects</h2>
+      <div class="centered-head reveal">
+        <div class="mono eyebrow-mono">01 &mdash; HOW WE ARE</div>
+        <h2 class="h-company">TERRAX HOLDINGS MAURITIUS LTD</h2>
+        <p class="h-tagline">Building <em>Quality</em>. Creating <em>Value</em>.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-card reveal">
+          <p>At TERRAX HOLDINGS MAURITIUS LTD, we believe exceptional construction starts long before ground is broken. We were founded on a simple commitment: to deliver reliable, high-quality project solutions while building genuine, long-term relationships with our clients, partners, and local communities.</p>
         </div>
-        <p class="header-desc">Terrax delivers structural intelligence, massive scaling ability, and precision execution across heavy civil, commercial, and energy sectors.</p>
+        <div class="about-card reveal">
+          <p>We bring order, clarity, and discipline to every stage of the building process. From early site assessment and careful planning through to procurement, execution, and final handover, our structured management ensures your vision is delivered without compromise.</p>
+        </div>
+      </div>
+      <div class="pillars">
+        <div class="pillar reveal"><span class="mono pillar-k">BASED IN</span><span class="pillar-v">Mauritius</span></div>
+        <div class="pillar reveal"><span class="mono pillar-k">FOCUS</span><span class="pillar-v">Construction &amp; project services</span></div>
+        <div class="pillar reveal"><span class="mono pillar-k">APPROACH</span><span class="pillar-v">Structured &amp; documented</span></div>
+        <div class="pillar reveal"><span class="mono pillar-k">OUTCOME</span><span class="pillar-v">Quality-driven delivery</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── 02 · WHAT WE DO (sticky, scroll-scrubbed video) ───────────────────────── -->
+  <section class="wwd" id="services">
+    <div class="wwd-sticky">
+      <div class="wwd-frame">
+        <div class="wwd-head"><span class="mono eyebrow-mono">02 &mdash; WHAT WE DO</span></div>
+
+        <div class="wwd-screen">
+          <video class="wwd-video" id="wwdVideo" muted playsinline preload="auto" data-src="assets/what-we-do.mp4" hidden></video>
+          <div class="wwd-placeholder" id="wwdPlaceholder"><span class="mono">VIDEO SLOT<br>SCROLL-SCRUBBED &middot; 8 SERVICE REVEAL</span></div>
+          <div class="wwd-shade"></div>
+
+          <div class="wwd-panel" data-wwd-panel>
+            <div class="wwd-num"><span class="mono wwd-num-big">01</span><span class="mono wwd-num-of">OF 08</span></div>
+            <h3 class="wwd-title">Construction</h3>
+            <p class="wwd-desc">Building construction, structural works, masonry and blockwork, concrete works, foundations, renovation, refurbishment, extensions and general building works.</p>
+            <a href="#contact" class="wwd-btn">View service <span class="mono">&#8594;</span></a>
+          </div>
+          <div class="wwd-panel" data-wwd-panel>
+            <div class="wwd-num"><span class="mono wwd-num-big">02</span><span class="mono wwd-num-of">OF 08</span></div>
+            <h3 class="wwd-title">Civil Works</h3>
+            <p class="wwd-desc">Site preparation, excavation, earthworks, drainage, concrete works, retaining structures, external works and site development.</p>
+            <a href="#contact" class="wwd-btn">View service <span class="mono">&#8594;</span></a>
+          </div>
+          <div class="wwd-panel" data-wwd-panel>
+            <div class="wwd-num"><span class="mono wwd-num-big">03</span><span class="mono wwd-num-of">OF 08</span></div>
+            <h3 class="wwd-title">Landscaping &amp; External Works</h3>
+            <p class="wwd-desc">Soft and hard landscaping, paving, garden development, pathways, boundary works and external site finishing.</p>
+            <a href="#contact" class="wwd-btn">View service <span class="mono">&#8594;</span></a>
+          </div>
+          <div class="wwd-panel" data-wwd-panel>
+            <div class="wwd-num"><span class="mono wwd-num-big">04</span><span class="mono wwd-num-of">OF 08</span></div>
+            <h3 class="wwd-title">Electrical Works</h3>
+            <p class="wwd-desc">Electrical installations, wiring, distribution boards, lighting, external lighting, testing and commissioning.</p>
+            <a href="#contact" class="wwd-btn">View service <span class="mono">&#8594;</span></a>
+          </div>
+          <div class="wwd-panel" data-wwd-panel>
+            <div class="wwd-num"><span class="mono wwd-num-big">05</span><span class="mono wwd-num-of">OF 08</span></div>
+            <h3 class="wwd-title">Plumbing</h3>
+            <p class="wwd-desc">Water supply, sanitary installations, drainage, plumbing works, fixtures and fittings, maintenance and repairs.</p>
+            <a href="#contact" class="wwd-btn">View service <span class="mono">&#8594;</span></a>
+          </div>
+          <div class="wwd-panel" data-wwd-panel>
+            <div class="wwd-num"><span class="mono wwd-num-big">06</span><span class="mono wwd-num-of">OF 08</span></div>
+            <h3 class="wwd-title">Stone &amp; Masonry Works</h3>
+            <p class="wwd-desc">Stone walls, masonry, blockwork, retaining walls, decorative stonework and external finishes.</p>
+            <a href="#contact" class="wwd-btn">View service <span class="mono">&#8594;</span></a>
+          </div>
+          <div class="wwd-panel" data-wwd-panel>
+            <div class="wwd-num"><span class="mono wwd-num-big">07</span><span class="mono wwd-num-of">OF 08</span></div>
+            <h3 class="wwd-title">Maintenance &amp; Refurbishment</h3>
+            <p class="wwd-desc">General building maintenance, repairs, refurbishment, minor construction works, external maintenance and property improvement.</p>
+            <a href="#contact" class="wwd-btn">View service <span class="mono">&#8594;</span></a>
+          </div>
+          <div class="wwd-panel" data-wwd-panel>
+            <div class="wwd-num"><span class="mono wwd-num-big">08</span><span class="mono wwd-num-of">OF 08</span></div>
+            <h3 class="wwd-title">Project Management</h3>
+            <p class="wwd-desc">Coordination of projects from consultation and planning through procurement, execution, quality control and handover.</p>
+            <a href="#contact" class="wwd-btn">View service <span class="mono">&#8594;</span></a>
+          </div>
+        </div>
+
+        <div class="wwd-segments" role="tablist" aria-label="Services">
+          <button class="wwd-seg" data-wwd-jump="0"><span class="wwd-seg-fill" data-wwd-seg></span><span class="mono wwd-seg-num" data-wwd-num>01</span></button>
+          <button class="wwd-seg" data-wwd-jump="1"><span class="wwd-seg-fill" data-wwd-seg></span><span class="mono wwd-seg-num" data-wwd-num>02</span></button>
+          <button class="wwd-seg" data-wwd-jump="2"><span class="wwd-seg-fill" data-wwd-seg></span><span class="mono wwd-seg-num" data-wwd-num>03</span></button>
+          <button class="wwd-seg" data-wwd-jump="3"><span class="wwd-seg-fill" data-wwd-seg></span><span class="mono wwd-seg-num" data-wwd-num>04</span></button>
+          <button class="wwd-seg" data-wwd-jump="4"><span class="wwd-seg-fill" data-wwd-seg></span><span class="mono wwd-seg-num" data-wwd-num>05</span></button>
+          <button class="wwd-seg" data-wwd-jump="5"><span class="wwd-seg-fill" data-wwd-seg></span><span class="mono wwd-seg-num" data-wwd-num>06</span></button>
+          <button class="wwd-seg" data-wwd-jump="6"><span class="wwd-seg-fill" data-wwd-seg></span><span class="mono wwd-seg-num" data-wwd-num>07</span></button>
+          <button class="wwd-seg" data-wwd-jump="7"><span class="wwd-seg-fill" data-wwd-seg></span><span class="mono wwd-seg-num" data-wwd-num>08</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── 03 · HOW WE WORK ───────────────────────── -->
+  <section class="section section--light-alt" id="how-we-work">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow"><span class="eyebrow-line"></span><span class="mono">03 &mdash; HOW WE WORK</span></div>
+        <h2>Eight stages, one accountable line.</h2>
+        <p class="lead">Every project follows the same disciplined sequence, so scope, cost and quality stay visible from day one.</p>
       </div>
 
-      <div class="cards-row">
-        <article class="expertise-card reveal">
-          <div class="expertise-image expertise-image--infra"><svg viewBox="0 0 48 48" fill="none"><path d="M6 38h4V22l8-6 8 6v16h4V16l-12-9-12 9v22Z" stroke="rgba(255,255,255,.55)" stroke-width="2" stroke-linejoin="round"/><path d="M2 38h44" stroke="rgba(255,255,255,.55)" stroke-width="2" stroke-linecap="round"/></svg></div>
-          <div class="expertise-body">
-            <h3>Infrastructure Dev</h3>
-            <p>Large-scale highway networks, structural steel transit terminals, complex bridges, and marine deep-foundation installations.</p>
-            <dl class="specs">
-              <div><dt>Max Project Value</dt><dd>$850M+</dd></div>
-              <div><dt>Safety Record</dt><dd>0.00 TRIR</dd></div>
-              <div><dt>Lead Time</dt><dd>12 Weeks</dd></div>
-            </dl>
-            <a href="#contact" class="link-arrow">VIEW CAPABILITIES <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-          </div>
-        </article>
+      <div class="stages reveal" id="stages">
+        <div class="stage-tabs" role="tablist" aria-label="Project stages">
+          <button class="stage-tab" role="tab" data-stage="0"><span class="mono">01</span><span class="stage-tab-dash"></span></button>
+          <button class="stage-tab" role="tab" data-stage="1"><span class="mono">02</span><span class="stage-tab-dash"></span></button>
+          <button class="stage-tab" role="tab" data-stage="2"><span class="mono">03</span><span class="stage-tab-dash"></span></button>
+          <button class="stage-tab" role="tab" data-stage="3"><span class="mono">04</span><span class="stage-tab-dash"></span></button>
+          <button class="stage-tab" role="tab" data-stage="4"><span class="mono">05</span><span class="stage-tab-dash"></span></button>
+          <button class="stage-tab" role="tab" data-stage="5"><span class="mono">06</span><span class="stage-tab-dash"></span></button>
+          <button class="stage-tab" role="tab" data-stage="6"><span class="mono">07</span><span class="stage-tab-dash"></span></button>
+          <button class="stage-tab" role="tab" data-stage="7"><span class="mono">08</span><span class="stage-tab-dash"></span></button>
+        </div>
+        <div class="stage-progress"><div class="stage-progress-fill" id="stageProgress"></div></div>
 
-        <article class="expertise-card reveal">
-          <div class="expertise-image expertise-image--commercial"><svg viewBox="0 0 48 48" fill="none"><rect x="10" y="6" width="28" height="38" stroke="rgba(255,255,255,.55)" stroke-width="2"/><path d="M16 14h4M28 14h4M16 22h4M28 22h4M16 30h4M28 30h4M16 38h4M28 38h4" stroke="rgba(255,255,255,.55)" stroke-width="2" stroke-linecap="round"/></svg></div>
-          <div class="expertise-body">
-            <h3>Commercial Build</h3>
-            <p>High-rise architectural structural frames, complex corporate facilities, and advanced engineering spaces built for performance.</p>
-            <dl class="specs">
-              <div><dt>Max Project Value</dt><dd>$420M+</dd></div>
-              <div><dt>LEED Standard</dt><dd>Platinum</dd></div>
-              <div><dt>Lead Time</dt><dd>16 Weeks</dd></div>
-            </dl>
-            <a href="#contact" class="link-arrow">VIEW CAPABILITIES <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <div class="stage-body">
+          <div class="stage-detail">
+            <div class="stage-num"><span class="mono stage-num-big" id="stageNum">01</span><span class="mono stage-num-of">OF 08</span></div>
+            <h3 class="stage-name" id="stageName">Client Consultation</h3>
+            <p class="stage-desc" id="stageDesc">Understand objectives, requirements, budget and expectations.</p>
+            <div class="stage-actions">
+              <button class="btn btn-square btn-outline" id="stagePrev" aria-label="Previous stage"><span class="mono">&#8592;</span></button>
+              <button class="btn btn-dark" id="stageNext">Next stage <span class="mono">&#8594;</span></button>
+            </div>
           </div>
-        </article>
-
-        <article class="expertise-card reveal">
-          <div class="expertise-image expertise-image--industrial"><svg viewBox="0 0 48 48" fill="none"><path d="M6 40V22l6 4v-8l6 4V14l6 4V10l6 6v24H6Z" stroke="rgba(255,255,255,.55)" stroke-width="2" stroke-linejoin="round"/><path d="M2 40h44" stroke="rgba(255,255,255,.55)" stroke-width="2" stroke-linecap="round"/></svg></div>
-          <div class="expertise-body">
-            <h3>Industrial Engineering</h3>
-            <p>High-tolerance heavy industrial structures, processing complexes, power substations, and automated robotic facilities.</p>
-            <dl class="specs">
-              <div><dt>Max Project Value</dt><dd>$1.2B+</dd></div>
-              <div><dt>Compliance</dt><dd>ASME Sec VIII</dd></div>
-              <div><dt>Lead Time</dt><dd>20 Weeks</dd></div>
-            </dl>
-            <a href="#contact" class="link-arrow">VIEW CAPABILITIES <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          <div class="stage-list" id="stageList">
+            <button class="stage-row" data-stage="0"><span class="mono">01</span><span>Client Consultation</span></button>
+            <button class="stage-row" data-stage="1"><span class="mono">02</span><span>Site Assessment</span></button>
+            <button class="stage-row" data-stage="2"><span class="mono">03</span><span>Design &amp; Planning</span></button>
+            <button class="stage-row" data-stage="3"><span class="mono">04</span><span>Quotation &amp; Contract</span></button>
+            <button class="stage-row" data-stage="4"><span class="mono">05</span><span>Procurement</span></button>
+            <button class="stage-row" data-stage="5"><span class="mono">06</span><span>Project Execution</span></button>
+            <button class="stage-row" data-stage="6"><span class="mono">07</span><span>Quality Inspection</span></button>
+            <button class="stage-row" data-stage="7"><span class="mono">08</span><span>Handover &amp; Support</span></button>
           </div>
-        </article>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="cta-bar reveal">
+  <!-- ───────────────────────── 04 · WHY TERRAX ───────────────────────── -->
+  <section class="section section--white" id="why-terrax">
+    <div class="container split">
+      <div class="reveal">
+        <div class="eyebrow"><span class="eyebrow-line"></span><span class="mono">04 &mdash; WHY TERRAX</span></div>
+        <h2>Reasons clients keep the same team on site.</h2>
+        <p class="lead">No inflated claims &mdash; just the working principles we hold ourselves to on every appointment.</p>
+        <a href="#contact" class="link-underline">Why Terrax in full <span class="mono orange">&#8594;</span></a>
+      </div>
+      <ul class="why-list">
+        <li class="reveal"><span class="mono">01</span><span>Integrated construction-related services</span></li>
+        <li class="reveal"><span class="mono">02</span><span>Professional and structured project approach</span></li>
+        <li class="reveal"><span class="mono">03</span><span>Focus on quality and workmanship</span></li>
+        <li class="reveal"><span class="mono">04</span><span>Safety-conscious execution</span></li>
+        <li class="reveal"><span class="mono">05</span><span>Transparent communication</span></li>
+        <li class="reveal"><span class="mono">06</span><span>Value-focused solutions</span></li>
+        <li class="reveal"><span class="mono">07</span><span>Long-term growth and continuous improvement</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── 05 · SECTORS WE SERVE ───────────────────────── -->
+  <section class="section section--light section--bordered" id="sectors">
+    <div class="container">
+      <div class="section-head section-head--row reveal">
         <div>
-          <p class="cta-bar-title">Have a custom civil engineering or building requirement?</p>
-          <p class="cta-bar-desc">Our estimating team provides comprehensive tender documents and site surveys.</p>
+          <div class="eyebrow"><span class="eyebrow-line"></span><span class="mono">05 &mdash; SECTORS WE SERVE</span></div>
+          <h2>Where we work</h2>
         </div>
-        <a href="#contact" class="btn btn-primary">Request Technical Consult <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <p class="note">Target and service sectors for Terrax appointments.</p>
+      </div>
+      <div class="sector-grid">
+        <div class="sector reveal"><span class="mono">01</span><span class="sector-name">Residential</span></div>
+        <div class="sector reveal"><span class="mono">02</span><span class="sector-name">Commercial</span></div>
+        <div class="sector reveal"><span class="mono">03</span><span class="sector-name">Hospitality</span></div>
+        <div class="sector reveal"><span class="mono">04</span><span class="sector-name">Industrial</span></div>
+        <div class="sector reveal"><span class="mono">05</span><span class="sector-name">Healthcare</span></div>
+        <div class="sector reveal"><span class="mono">06</span><span class="sector-name">Education</span></div>
+        <div class="sector reveal"><span class="mono">07</span><span class="sector-name">Public &amp; Institutional</span></div>
+        <div class="sector reveal"><span class="mono">08</span><span class="sector-name">Property Development</span></div>
       </div>
     </div>
   </section>
 
-  <!-- INTEGRATED SERVICES -->
-  <section class="section section-dark" id="integrated-services">
-    <div class="section-glow section-glow-left"></div>
+  <!-- ───────────────────────── 06 · QUALITY & SAFETY ───────────────────────── -->
+  <section class="section section--dark" id="quality-safety">
+    <div class="dark-glow"></div>
     <div class="container">
-      <div class="section-header reveal">
-        <div class="header-left">
-          <div class="eyebrow"><span class="eyebrow-dot"></span>02 — Our Services</div>
-          <h2>Integrated Construction Services</h2>
+      <div class="section-head section-head--row reveal">
+        <div>
+          <div class="eyebrow"><span class="eyebrow-line"></span><span class="mono">06 &mdash; QUALITY &amp; SAFETY</span></div>
+          <h2>Built in, not inspected on.</h2>
         </div>
-        <p class="header-desc">Every engineering standard is met with high-tolerance capabilities, enabling seamless execution from planning to final structural works.</p>
+        <div class="tabs" role="tablist" aria-label="Quality and safety">
+          <button class="tab is-active" role="tab" data-tab="quality" aria-selected="true">Quality</button>
+          <button class="tab" role="tab" data-tab="hse" aria-selected="false">Health &amp; Safety</button>
+        </div>
       </div>
+      <div class="qs-grid" id="qsGrid" data-active="quality">
+        <div class="qs-panel" data-panel="quality">
+          <div class="qs-card"><span class="mono">01</span><span>Quality planning</span></div>
+          <div class="qs-card"><span class="mono">02</span><span>Material verification and inspections</span></div>
+          <div class="qs-card"><span class="mono">03</span><span>Workmanship inspections</span></div>
+          <div class="qs-card"><span class="mono">04</span><span>Testing where applicable</span></div>
+          <div class="qs-card"><span class="mono">05</span><span>Progress monitoring</span></div>
+          <div class="qs-card"><span class="mono">06</span><span>Snag identification and rectification</span></div>
+          <div class="qs-card"><span class="mono">07</span><span>Final inspection</span></div>
+          <div class="qs-card"><span class="mono">08</span><span>Client sign-off</span></div>
+        </div>
+        <div class="qs-panel" data-panel="hse" hidden>
+          <div class="qs-card"><span class="mono">01</span><span>Risk assessments</span></div>
+          <div class="qs-card"><span class="mono">02</span><span>Appropriate PPE</span></div>
+          <div class="qs-card"><span class="mono">03</span><span>Toolbox talks</span></div>
+          <div class="qs-card"><span class="mono">04</span><span>Safe working practices</span></div>
+          <div class="qs-card"><span class="mono">05</span><span>Incident reporting</span></div>
+          <div class="qs-card"><span class="mono">06</span><span>Environmental awareness</span></div>
+          <div class="qs-card"><span class="mono">07</span><span>Employee training</span></div>
+          <div class="qs-card"><span class="mono">08</span><span>Continuous improvement</span></div>
+        </div>
+      </div>
+      <div class="mono footnote">NO CERTIFICATION CLAIMED &mdash; APPROACH AND PROCESS ONLY</div>
+    </div>
+  </section>
 
-      <div class="services-grid">
-        <div class="service-card reveal">
-          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#ff751f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg></div>
-          <h3>Construction</h3>
-          <p>Building construction, structural works, masonry, concrete works, foundations, and refurbishment.</p>
-        </div>
-        <div class="service-card reveal">
-          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#ff751f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg></div>
-          <h3>Civil Works</h3>
-          <p>Site preparation, excavation, earthworks, drainage, concrete works, and site development.</p>
-        </div>
-        <div class="service-card reveal">
-          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#ff751f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9l4-3 4 3v12"/><path d="M12 21V9l4-3 4 3v12"/><path d="M2 21h20"/><path d="M8 13h.01M8 17h.01M16 13h.01M16 17h.01"/></svg></div>
-          <h3>Landscaping &amp; External</h3>
-          <p>Soft and hard landscaping, paving, pathways, boundary works and external site finishing.</p>
-        </div>
-        <div class="service-card reveal">
-          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#ff751f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14Z"/></svg></div>
-          <h3>Electrical Works</h3>
-          <p>Electrical installations, wiring, distribution, lighting, testing and commissioning.</p>
-        </div>
-        <div class="service-card reveal">
-          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#ff751f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94Z"/></svg></div>
-          <h3>Plumbing</h3>
-          <p>Water supply, sanitary installations, drainage, fixtures, maintenance and repairs.</p>
-        </div>
-        <div class="service-card reveal">
-          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#ff751f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-4a2 2 0 0 0 0 4h4a1 1 0 0 0 1-1v-2"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg></div>
-          <h3>Stone &amp; Masonry</h3>
-          <p>Stone walls, masonry, blockwork, retaining walls, and decorative finishes.</p>
-        </div>
-        <div class="service-card reveal">
-          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#ff751f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1Z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg></div>
-          <h3>Maintenance</h3>
-          <p>General building maintenance, minor construction, external repairs and property improvement.</p>
-        </div>
-        <div class="service-card reveal">
-          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#ff751f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg></div>
-          <h3>Project Management</h3>
-          <p>End-to-end coordination, procurement, execution, quality control and seamless handover.</p>
-        </div>
+  <!-- ───────────────────────── 07 · SUSTAINABILITY ───────────────────────── -->
+  <section class="section section--white" id="sustainability">
+    <div class="container split split--top">
+      <div class="reveal">
+        <div class="eyebrow"><span class="eyebrow-line"></span><span class="mono">07 &mdash; SUSTAINABILITY</span></div>
+        <h2>Responsible practice, improved continuously.</h2>
+        <p class="lead">We aim to integrate responsible practices into operations and continuously improve the environmental performance of our projects.</p>
+        <div class="image-slot image-slot--4x3"><span class="mono">IMAGE SLOT<br>SITE PRACTICE PHOTOGRAPHY</span></div>
+      </div>
+      <div class="sustain-grid">
+        <div class="sustain-card reveal"><span class="diamond-outline"></span><div><h3>Responsible sourcing</h3><p>Materials and suppliers selected with care and traceability in mind.</p></div></div>
+        <div class="sustain-card reveal"><span class="diamond-outline"></span><div><h3>Waste reduction</h3><p>Plan quantities carefully and reduce avoidable site waste.</p></div></div>
+        <div class="sustain-card reveal"><span class="diamond-outline"></span><div><h3>Efficient use of materials and resources</h3><p>Sequence works so material, water and energy use stay proportionate.</p></div></div>
+        <div class="sustain-card reveal"><span class="diamond-outline"></span><div><h3>Responsible site practices</h3><p>Keep sites orderly, contained and considerate of neighbours.</p></div></div>
+        <div class="sustain-card reveal"><span class="diamond-outline"></span><div><h3>Environmental protection</h3><p>Protect soil, vegetation and drainage during works.</p></div></div>
+        <div class="sustain-card reveal"><span class="diamond-outline"></span><div><h3>Continuous improvement</h3><p>Review each project and improve environmental performance over time.</p></div></div>
       </div>
     </div>
   </section>
 
-  <!-- HOW WE WORK -->
-  <section class="section section-dark section-border" id="how-we-work">
-    <div class="section-glow section-glow-right"></div>
+  <!-- ───────────────────────── 08 · PROJECTS ───────────────────────── -->
+  <section class="section section--light-alt section--bordered" id="projects">
     <div class="container">
-      <div class="section-header section-header--split reveal">
-        <div class="header-left">
-          <div class="eyebrow"><span class="eyebrow-dot"></span>03 — How We Work</div>
-          <h2>Eight stages, one accountable line.</h2>
+      <div class="eyebrow reveal"><span class="eyebrow-line"></span><span class="mono">08 &mdash; PROJECTS</span></div>
+      <div class="split split--center reveal">
+        <div>
+          <h2>Our portfolio is being documented.</h2>
+          <p class="lead">We publish only genuine Terrax work. As projects complete, each one is added with location, scope, completion date and photography &mdash; never stock imagery presented as our own.</p>
+          <a href="#contact" class="btn btn-dark">Portfolio status <span class="mono">&#8594;</span></a>
         </div>
-        <p class="header-desc">Every project follows the same disciplined sequence, so scope, cost and quality stay visible from day one.</p>
-      </div>
-
-      <div class="timeline-grid">
-        <div class="timeline-row">
-          <div class="step reveal">
-            <div class="step-header"><span class="step-num">01</span><span class="step-dot"></span><svg class="flow-line" viewBox="0 0 224 2" preserveAspectRatio="none"><line x1="0" y1="1" x2="224" y2="1"/></svg></div>
-            <h4>Client Consultation</h4>
-            <p>Stage 01 of the integrated TERRAX project execution lifecycle.</p>
-          </div>
-          <div class="step reveal">
-            <div class="step-header"><span class="step-num">02</span><span class="step-dot"></span><svg class="flow-line" viewBox="0 0 221 2" preserveAspectRatio="none"><line x1="0" y1="1" x2="221" y2="1"/></svg></div>
-            <h4>Site Assessment</h4>
-            <p>Stage 02 of the integrated TERRAX project execution lifecycle.</p>
-          </div>
-          <div class="step reveal">
-            <div class="step-header"><span class="step-num">03</span><span class="step-dot"></span><svg class="flow-line" viewBox="0 0 221 2" preserveAspectRatio="none"><line x1="0" y1="1" x2="221" y2="1"/></svg></div>
-            <h4>Design &amp; Planning</h4>
-            <p>Stage 03 of the integrated TERRAX project execution lifecycle.</p>
-          </div>
-          <div class="step reveal">
-            <div class="step-header"><span class="step-num">04</span><span class="step-dot"></span></div>
-            <h4>Quotation &amp; Contract</h4>
-            <p>Stage 04 of the integrated TERRAX project execution lifecycle.</p>
-          </div>
-        </div>
-        <div class="timeline-row">
-          <div class="step reveal">
-            <div class="step-header"><span class="step-num">05</span><span class="step-dot"></span><svg class="flow-line" viewBox="0 0 221 2" preserveAspectRatio="none"><line x1="0" y1="1" x2="221" y2="1"/></svg></div>
-            <h4>Procurement</h4>
-            <p>Stage 05 of the integrated TERRAX project execution lifecycle.</p>
-          </div>
-          <div class="step reveal">
-            <div class="step-header"><span class="step-num">06</span><span class="step-dot"></span><svg class="flow-line" viewBox="0 0 220 2" preserveAspectRatio="none"><line x1="0" y1="1" x2="220" y2="1"/></svg></div>
-            <h4>Project Execution</h4>
-            <p>Stage 06 of the integrated TERRAX project execution lifecycle.</p>
-          </div>
-          <div class="step reveal">
-            <div class="step-header"><span class="step-num">07</span><span class="step-dot"></span><svg class="flow-line" viewBox="0 0 221 2" preserveAspectRatio="none"><line x1="0" y1="1" x2="221" y2="1"/></svg></div>
-            <h4>Quality Inspection</h4>
-            <p>Stage 07 of the integrated TERRAX project execution lifecycle.</p>
-          </div>
-          <div class="step reveal">
-            <div class="step-header"><span class="step-num">08</span><span class="step-dot"></span></div>
-            <h4>Handover &amp; Support</h4>
-            <p>Stage 08 of the integrated TERRAX project execution lifecycle.</p>
-          </div>
+        <div class="project-slots">
+          <div class="image-slot image-slot--3x4"><span class="mono">RESERVED &mdash; PROJECT 01</span></div>
+          <div class="image-slot image-slot--3x4 image-slot--offset"><span class="mono">RESERVED &mdash; PROJECT 02</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT / WHY TERRAX / QUALITY & SAFETY / SUSTAINABILITY -->
-  <section class="section section-dark section-border" id="about">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="header-left">
-          <div class="eyebrow"><span class="eyebrow-dot"></span>04 — About Us</div>
-          <h2>Building Quality. Creating Value.</h2>
-        </div>
-        <p class="header-desc">TERRAX HOLDINGS (MAURITIUS) LTD delivers reliable, high-quality project solutions while building genuine, long-term relationships with our clients, partners, and communities.</p>
-      </div>
-
-      <div class="about-columns reveal">
-        <p>At TERRAX HOLDINGS (MAURITIUS) LTD, we believe exceptional construction starts long before ground is broken. We were founded on a simple commitment: to deliver reliable, high-quality project solutions while building genuine, long-term relationships with our clients, partners, and local communities.</p>
-        <p>We bring order, clarity, and discipline to every stage of the building process. From early site assessment and careful planning through to procurement, execution, and final handover, our structured management ensures your vision is delivered without compromise.</p>
-      </div>
-
-      <div class="stat-row reveal">
-        <div class="stat"><span class="stat-num">$1.2B+</span><span class="stat-label">Largest Project Value</span></div>
-        <div class="stat"><span class="stat-num">0.00</span><span class="stat-label">TRIR Safety Record</span></div>
-        <div class="stat"><span class="stat-num">8</span><span class="stat-label">Stage Delivery Process</span></div>
-        <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Mauritius Based Teams</span></div>
-      </div>
-
-      <div class="why-grid" id="why-terrax">
-        <div class="why-card reveal">
-          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#ff751f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></div>
-          <h3>Why Terrax</h3>
-          <p>One accountable line from consultation to handover, so scope, cost and quality never drift.</p>
-        </div>
-        <div class="why-card reveal" id="quality-safety">
-          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#ff751f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1Z"/><path d="M9 12l2 2 4-4"/></svg></div>
-          <h3>Quality &amp; Safety</h3>
-          <p>A 0.00 TRIR safety record backed by rigorous inspection at every one of our eight delivery stages.</p>
-        </div>
-        <div class="why-card reveal" id="sustainability">
-          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#ff751f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 11 13.28 11 11"/></svg></div>
-          <h3>Sustainability</h3>
-          <p>Resource-efficient methods and LEED-standard delivery that reduce impact without slowing progress.</p>
+  <!-- ───────────────────────── 09 · START A PROJECT ───────────────────────── -->
+  <section class="section section--cta" id="contact">
+    <div class="cta-glow"></div>
+    <svg class="cta-mark" viewBox="80 130 840 445" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <g fill="none" stroke="#FFFFFF" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="62">
+        <path d="M590 520 L370 170 L351 198"/><path d="M370 170 L120 535 L380 535 L398 506"/><path d="M380 535 L470 395"/><path d="M550 300 L655 170 L673 199"/><path d="M655 170 L880 535"/>
+      </g>
+    </svg>
+    <div class="container split split--center">
+      <div class="reveal">
+        <div class="eyebrow"><span class="eyebrow-line"></span><span class="mono">START A PROJECT</span></div>
+        <h2 class="h-xl">Have a project in mind?</h2>
+        <p class="lead lead--dark">New construction, renovation, landscaping works or property improvement &mdash; tell us the site, the scope and the timing, and we will come back with a structured next step.</p>
+        <div class="cta-actions">
+          <a href="mailto:info@terraxholdings.mu" class="btn btn-primary btn-lg">Request a Consultation <span class="mono">&#8594;</span></a>
+          <span class="mono note-mono">NO OBLIGATION &middot; FREE FIRST ASSESSMENT</span>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section class="section section-dark section-border" id="projects">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="header-left">
-          <div class="eyebrow"><span class="eyebrow-dot"></span>05 — Our Work</div>
-          <h2>Featured Projects</h2>
+      <div class="lines reveal">
+        <div class="lines-head">
+          <span class="mono">DIRECT LINES</span>
+          <span class="mono lines-hours"><span class="pulse"></span>MON&ndash;FRI 08:00&ndash;17:00 MUT</span>
         </div>
-        <p class="header-desc">A cross-section of the infrastructure, commercial and industrial work TERRAX has delivered across the region.</p>
-      </div>
-
-      <div class="cards-row">
-        <article class="expertise-card reveal">
-          <div class="expertise-image expertise-image--infra"><svg viewBox="0 0 48 48" fill="none"><path d="M6 38h4V22l8-6 8 6v16h4V16l-12-9-12 9v22Z" stroke="rgba(255,255,255,.55)" stroke-width="2" stroke-linejoin="round"/></svg></div>
-          <div class="expertise-body">
-            <h3>North Coast Transit Bridge</h3>
-            <p>A structural steel transit terminal and marine deep-foundation bridge crossing, delivered on a 12-week accelerated schedule.</p>
-            <a href="#contact" class="link-arrow">VIEW CASE STUDY <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-          </div>
-        </article>
-        <article class="expertise-card reveal">
-          <div class="expertise-image expertise-image--commercial"><svg viewBox="0 0 48 48" fill="none"><rect x="10" y="6" width="28" height="38" stroke="rgba(255,255,255,.55)" stroke-width="2"/></svg></div>
-          <div class="expertise-body">
-            <h3>Port Louis Corporate Tower</h3>
-            <p>LEED Platinum high-rise headquarters combining architectural structural framing with advanced engineering spaces.</p>
-            <a href="#contact" class="link-arrow">VIEW CASE STUDY <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-          </div>
-        </article>
-        <article class="expertise-card reveal">
-          <div class="expertise-image expertise-image--industrial"><svg viewBox="0 0 48 48" fill="none"><path d="M6 40V22l6 4v-8l6 4V14l6 4V10l6 6v24H6Z" stroke="rgba(255,255,255,.55)" stroke-width="2" stroke-linejoin="round"/></svg></div>
-          <div class="expertise-body">
-            <h3>Riviere Industrial Complex</h3>
-            <p>ASME Section VIII compliant processing facility with automated robotic assembly and a dedicated power substation.</p>
-            <a href="#contact" class="link-arrow">VIEW CASE STUDY <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT / FINAL CTA -->
-  <section class="section section-cta" id="contact">
-    <div class="container">
-      <div class="final-cta reveal">
-        <h2>Hire us for your next project.</h2>
-        <p>Talk to our estimating team about scope, schedule and site survey — no obligation.</p>
-        <a href="mailto:info@terraxholdings.mu" class="btn btn-primary btn-lg">Request Consultation <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <a href="tel:+2305000000" class="line"><span class="mono orange">01</span><span><strong>+230 5000 0000</strong><small>Call the office</small></span><span class="mono orange">&#8599;</span></a>
+        <a href="https://wa.me/2305000000" class="line"><span class="mono orange">02</span><span><strong>WhatsApp us</strong><small>Fastest response during office hours</small></span><span class="mono orange">&#8599;</span></a>
+        <a href="mailto:info@terraxholdings.mu" class="line"><span class="mono orange">03</span><span><strong>info@terraxholdings.mu</strong><small>Send drawings, plans or site photos</small></span><span class="mono orange">&#8599;</span></a>
+        <div class="mono lines-foot">TERRAX HOLDINGS (MAURITIUS) LTD<br>BRN C26237228 &middot; VAT28562035</div>
       </div>
     </div>
   </section>
 
 </main>
 
+<!-- ───────────────────────── 10 · FOOTER ───────────────────────── -->
 <footer class="site-footer">
-  <div class="container footer-grid">
-    <div class="footer-brand">
-      <div class="logo">
-        <svg class="logo-mark" width="36" height="30" viewBox="0 0 40 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M11 2 L20 17 L11 32" stroke="#ffffff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M20 2 L34 32" stroke="#ff751f" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M20 2 L11 17" stroke="#ff751f" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <span class="logo-text">TERRAX</span>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo logo--footer">
+          <svg class="logo-mark" viewBox="80 130 840 445" aria-hidden="true">
+            <g fill="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="62">
+              <path d="M590 520 L370 170 L351 198" stroke="#FDE8DA"/><path d="M370 170 L120 535 L380 535 L398 506" stroke="#D9D9D7"/><path d="M380 535 L470 395" stroke="#FDE8DA"/><path d="M550 300 L655 170 L673 199" stroke="#FDE8DA"/><path d="M655 170 L880 535" stroke="#D9D9D7"/>
+            </g>
+          </svg>
+          <span class="logo-text"><span class="logo-name">TERRAX</span><span class="logo-sub">HOLDINGS (MAURITIUS) LTD</span></span>
+        </div>
+        <p class="footer-blurb">Building Quality. Creating Value. A Mauritius-based construction and project services company.</p>
       </div>
-      <p>TERRAX Holdings (Mauritius) Ltd — integrated construction, civil engineering and infrastructure services.</p>
+      <div>
+        <div class="mono footer-k">NAVIGATE</div>
+        <div class="footer-links">
+          <a href="#about">About Us</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#why-terrax">Why Terrax</a><a href="#quality-safety">Quality &amp; Safety</a><a href="#sustainability">Sustainability</a><a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="mono footer-k">CONTACT</div>
+        <div class="footer-links">
+          <a href="tel:+2305000000">+230 5000 0000</a>
+          <a href="https://wa.me/2305000000">WhatsApp</a>
+          <a href="mailto:info@terraxholdings.mu">info@terraxholdings.mu</a>
+          <span class="footer-muted">Office address to be confirmed<br>Mauritius</span>
+        </div>
+      </div>
+      <div>
+        <div class="mono footer-k">LEGAL</div>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Website Terms</a>
+          <span class="mono footer-muted">BRN C26237228<br>VAT28562035</span>
+        </div>
+      </div>
     </div>
-    <div class="footer-links">
-      <h5>Company</h5>
-      <a href="#about">About</a>
-      <a href="#why-terrax">Why Terrax</a>
-      <a href="#projects">Projects</a>
+    <div class="footer-bottom mono">
+      <span>&copy; <span id="year"></span> TERRAX HOLDINGS (MAURITIUS) LTD</span>
+      <span>WWW.TERRAXHOLDINGS.MU</span>
     </div>
-    <div class="footer-links">
-      <h5>Services</h5>
-      <a href="#services">Our Expertise</a>
-      <a href="#integrated-services">Integrated Services</a>
-      <a href="#how-we-work">How We Work</a>
-    </div>
-    <div class="footer-links">
-      <h5>Standards</h5>
-      <a href="#quality-safety">Quality &amp; Safety</a>
-      <a href="#sustainability">Sustainability</a>
-      <a href="#contact">Request Consultation</a>
-    </div>
-  </div>
-  <div class="container footer-bottom">
-    <span>© <span id="year"></span> TERRAX Holdings (Mauritius) Ltd. All rights reserved.</span>
   </div>
 </footer>
+
+<!-- Mobile bottom tab bar -->
+<nav class="tabbar" id="tabbar" aria-label="Quick navigation">
+  <a href="#home" class="tabbar-item is-active"><span class="tabbar-icon">&#8962;</span><span class="mono">HOME</span></a>
+  <a href="#services" class="tabbar-item"><span class="tabbar-icon">&#9636;</span><span class="mono">SERVICES</span></a>
+  <a href="#projects" class="tabbar-item"><span class="tabbar-icon">&#9707;</span><span class="mono">PROJECTS</span></a>
+  <a href="#contact" class="tabbar-item"><span class="tabbar-icon">&#9998;</span><span class="mono">ENQUIRE</span></a>
+  <button class="tabbar-item" id="tabbarMenu"><span class="tabbar-icon">&#8801;</span><span class="mono">MENU</span></button>
+</nav>
 
 <script src="js/vendor/gsap.min.js"></script>
 <script src="js/vendor/ScrollTrigger.min.js"></script>
